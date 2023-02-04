@@ -21,12 +21,12 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 1 ) ],
 "loop": false,
 "name": "closing",
-"speed": 20.0
+"speed": 18.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "opening",
-"speed": 20.0
+"speed": 18.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -45,7 +45,7 @@ playing = true
 shape = SubResource( 1 )
 
 [node name="MoveTimeout" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.4
 one_shot = true
 
 [connection signal="timeout" from="MoveTimeout" to="." method="_on_MoveTimeout_timeout"]

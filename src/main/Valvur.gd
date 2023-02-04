@@ -16,6 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not wait:
+		$Sprite.animation = "walk"
 		if direction:
 			move_and_collide(Vector2(1,0))
 		#print("parem")
@@ -45,6 +46,7 @@ func flip():
 		
 func wait(time):
 	wait = true
+	$Sprite.animation = "stand"
 	$WaitTime.start(time)
 
 func _on_ViewArea_body_entered(body):
@@ -53,3 +55,7 @@ func _on_ViewArea_body_entered(body):
 
 func _on_WaitTime_timeout():
 	wait = false
+
+
+func _on_TimerNode_body_entered(body):
+	wait(5)

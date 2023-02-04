@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 5
+export var speed = 4
 var hiding = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
