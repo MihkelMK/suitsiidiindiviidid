@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://main/art/valvur/vwalk7.png" type="Texture" id=1]
 [ext_resource path="res://main/Valvur.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://main/art/valvur/vwalk8.png" type="Texture" id=8]
 [ext_resource path="res://main/art/valvur/vwalk2.png" type="Texture" id=9]
 [ext_resource path="res://main/art/valvur/vwalk3.png" type="Texture" id=10]
+[ext_resource path="res://main/art/valvur/valvurivalgus.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.5
@@ -17,6 +18,11 @@ height = 17.0
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "stand",
@@ -29,31 +35,48 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 92, 10 )
+extents = Vector2( 80, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 16, 10 )
 
 [node name="Valvur" type="KinematicBody2D"]
 position = Vector2( 1, 0 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 7
+collision_mask = 7
 script = ExtResource( 2 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="Body" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "stand"
 playing = true
 
-[node name="ViewArea" type="Area2D" parent="."]
+[node name="Headlamp" type="Sprite" parent="."]
+position = Vector2( 73, -5 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
 
-[node name="ViewHitbox" type="CollisionShape2D" parent="ViewArea"]
-position = Vector2( 51, -22 )
+[node name="FrontViewArea" type="Area2D" parent="."]
+
+[node name="FrontViewHitbox" type="CollisionShape2D" parent="FrontViewArea"]
+position = Vector2( 63, -22 )
 shape = SubResource( 4 )
 
 [node name="WaitTime" type="Timer" parent="."]
 
-[connection signal="body_entered" from="ViewArea" to="." method="_on_ViewArea_body_entered"]
+[node name="BackViewArea" type="Area2D" parent="."]
+
+[node name="BackViewHitbox" type="CollisionShape2D" parent="BackViewArea"]
+position = Vector2( -33, -22 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="FrontViewArea" to="." method="_on_FrontViewArea_body_entered"]
+[connection signal="body_exited" from="FrontViewArea" to="." method="_on_FrontViewArea_body_exited"]
 [connection signal="timeout" from="WaitTime" to="." method="_on_WaitTime_timeout"]
+[connection signal="body_entered" from="BackViewArea" to="." method="_on_BackViewArea_body_entered"]
+[connection signal="body_exited" from="BackViewArea" to="." method="_on_BackViewArea_body_exited"]

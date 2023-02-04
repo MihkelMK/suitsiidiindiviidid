@@ -47,12 +47,17 @@ smoothing_speed = 4.0
 position = Vector2( 240, 316 )
 
 [node name="TimerNode" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 368, 300 )
 time = 0.5
 
 [node name="FlipNode" parent="." instance=ExtResource( 8 )]
 position = Vector2( 184, 292 )
+force = true
 
 [node name="FlipNode2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 624, 292 )
-time = 1.0
+force = true
+
+[node name="FlipNode3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 384, 296 )
