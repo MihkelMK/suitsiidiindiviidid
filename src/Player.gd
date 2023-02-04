@@ -15,16 +15,25 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		move_and_collide(Vector2(speed,0))
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.playing = true
 	
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		move_and_collide(Vector2(-speed,0))
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.playing = true
+		
+	else:
+		$AnimatedSprite.playing = false
 	
 	if atLadder == true:
 		if position.y == 288 and Input.is_action_just_pressed("ui_up"):
 			position -= Vector2(0,100)
+
 		if position.y == 188 and Input.is_action_just_pressed("ui_down"):
 			position += Vector2(0,100)
-	
+
+
 	if is_on_floor() == true:
 		print("floor")
 	
