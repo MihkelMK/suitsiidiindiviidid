@@ -5,7 +5,7 @@
 [ext_resource path="res://popup/popup.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7962.24, 8213.46 )
+extents = Vector2( 5078.28, 2310.04 )
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.972067 )
@@ -24,14 +24,18 @@ script = ExtResource( 1 )
 popup_scene = ExtResource( 3 )
 
 [node name="Screen" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen"]
-position = Vector2( -4, 0 )
+position = Vector2( -188, -368 )
 scale = Vector2( 0.0638011, 0.0623367 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Screen"]
-scale = Vector2( 16, 16 )
+position = Vector2( -140, -360 )
+scale = Vector2( 11.625, 4.75 )
 texture = SubResource( 5 )
 
 [node name="PopupTimer" type="Timer" parent="."]
@@ -42,10 +46,10 @@ layer = 128
 
 [node name="WinLoss" type="Label" parent="WinLossCanvas"]
 show_behind_parent = true
-margin_left = 328.0
-margin_top = 584.0
-margin_right = 960.0
-margin_bottom = 841.0
+margin_left = 192.0
+margin_top = 216.0
+margin_right = 824.0
+margin_bottom = 473.0
 custom_fonts/font = SubResource( 3 )
 align = 1
 valign = 1
