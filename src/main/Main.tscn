@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://main/Ladder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/Elements/Ladder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://main/Elements/Locker.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node"]
+
+[node name="Locker" parent="." instance=ExtResource( 4 )]
+position = Vector2( 96, 296 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 176, 288 )
@@ -24,5 +28,7 @@ scale = Vector2( 7, 0.25 )
 texture = ExtResource( 3 )
 offset = Vector2( -14.8571, -63.9999 )
 
+[connection signal="body_entered" from="Locker" to="Player" method="_on_Locker_body_entered"]
+[connection signal="body_exited" from="Locker" to="Player" method="_on_Locker_body_exited"]
 [connection signal="body_entered" from="Ladder" to="Player" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladder" to="Player" method="_on_Ladder_body_exited"]
