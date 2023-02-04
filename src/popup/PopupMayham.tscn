@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://popup/PopupMayham.gd" type="Script" id=1]
+[ext_resource path="res://assets/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://popup/popup.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7962.24, 8213.46 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.972067 )
+colors = PoolColorArray( 0.247059, 0.247059, 0.247059, 1, 0.247059, 0.247059, 0.247059, 1 )
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 188
+font_data = ExtResource( 2 )
+
+[node name="PopupMayham" type="Node2D"]
+position = Vector2( 648, 696 )
+script = ExtResource( 1 )
+popup_scene = ExtResource( 3 )
+
+[node name="Screen" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen"]
+position = Vector2( -4, 0 )
+scale = Vector2( 0.0638011, 0.0623367 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Screen"]
+scale = Vector2( 16, 16 )
+texture = SubResource( 5 )
+
+[node name="PopupTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="WinLossCanvas" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="WinLoss" type="Label" parent="WinLossCanvas"]
+show_behind_parent = true
+margin_left = 328.0
+margin_top = 584.0
+margin_right = 960.0
+margin_bottom = 841.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+
+[connection signal="timeout" from="PopupTimer" to="." method="_on_PopupTimer_timeout"]
