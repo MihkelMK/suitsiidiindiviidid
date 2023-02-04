@@ -16,15 +16,15 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		move_and_collide(Vector2(speed,0))
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.playing = true
+		$AnimatedSprite.animation = "walk"
 	
 	elif Input.is_action_pressed("ui_left"):
 		move_and_collide(Vector2(-speed,0))
 		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.playing = true
+		$AnimatedSprite.animation = "walk"
 		
 	else:
-		$AnimatedSprite.playing = false
+		$AnimatedSprite.animation = "stand"
 	
 	if atLadder == true:
 		if position.y == 288 and Input.is_action_just_pressed("ui_up"):
