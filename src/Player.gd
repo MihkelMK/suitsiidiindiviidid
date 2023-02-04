@@ -31,16 +31,16 @@ func _process(delta):
 			unhide()
 			move_and_collide(Vector2(speed,0))
 			$AnimatedSprite.flip_h = false
-			$AnimatedSprite.playing = true
+		$AnimatedSprite.animation = "walk"
 		
 		elif Input.is_action_pressed("ui_left"):
 			unhide()
 			move_and_collide(Vector2(-speed,0))
 			$AnimatedSprite.flip_h = true
-			$AnimatedSprite.playing = true
+		$AnimatedSprite.animation = "walk"
 			
 		else:
-			$AnimatedSprite.playing = false
+		$AnimatedSprite.animation = "stand"
 		
 func unhide():
 	if hiding:
@@ -51,7 +51,7 @@ func unhide():
 
 func hide():
 	if !hiding:
-		$AnimatedSprite.playing = false
+		$AnimatedSprite.animation = "stand"
 		$HideTimeout.start()
 		scale = Vector2(0.9, 0.9)
 		move_and_collide(Vector2(0,0))
