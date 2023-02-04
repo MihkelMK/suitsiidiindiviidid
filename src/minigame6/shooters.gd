@@ -14,9 +14,13 @@ func set_bricks():
 	for y in range(brickCountY):
 		for x in range(brickCountX):
 			var brick_instance = brick.instance()
-			#var x_koordinaat = 
-			brick_instance.position=Vector2(135+100*x,70+160*y)
-			
+			var rng = RandomNumberGenerator.new()
+			rng.randomize()
+			var numx = rng.randi_range(50, 800)
+			var numy = rng.randi_range(70, 450)
+			print(numx, numy)
+			#brick_instance.position=Vector2(135+100*x,70+160*y)
+			brick_instance.position=Vector2(numx, numy)
 			if y==importantBrickY && x==importantBrickX:
 				brick_instance.get_child(0).region_rect.position.x = TEXTURE_VARIATIONS_AMOUNT * TEXTURE_WIDTH
 				brick_instance.makeImportant()

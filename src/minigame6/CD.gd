@@ -1,24 +1,18 @@
 extends Sprite
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var edasi = true
 
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	if rotation_degrees >= 0 and rotation_degrees < 90 and edasi:
-		rotation_degrees += 2
-		
+	if rotation_degrees < 90:
+		edasi = true
+		rotation_degrees = 90
+	if rotation_degrees <= 270 and edasi:
+		rotation_degrees += 1.5
 	else:
-		rotation_degrees -= 2
+		rotation_degrees -= 1.5
 		edasi = false
-	print(rotation_degrees)
-	pass # Replace with function body.
+	#print(rotation_degrees)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
