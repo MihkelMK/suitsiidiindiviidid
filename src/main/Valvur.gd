@@ -49,8 +49,8 @@ func wait(time):
 	$WaitTime.start(time)
 
 func _on_ViewArea_body_entered(body):
-	print("KUULE!")
-
+	if "Player" in body.name:
+		print("KUULE!")
 
 func _on_WaitTime_timeout():
 	wait = false
