@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brickrow.png-96afeac849422e4f84343c9b7cc96832.stex"
+path="res://.import/background.png-27a4e6fbe9fec51c50865e6620c379ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://breakout/art/brickrow.png"
-dest_files=[ "res://.import/brickrow.png-96afeac849422e4f84343c9b7cc96832.stex" ]
+source_file="res://breakout/art/background.png"
+dest_files=[ "res://.import/background.png-27a4e6fbe9fec51c50865e6620c379ab.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
-extends StaticBody2D
+extends KinematicBody2D
 
-export var speed = 350
+export var speed = 500
 var direction = 0
 var screen_size 
 var half_w
@@ -10,35 +10,24 @@ var half_w
 func _ready():
 	# Take screen size into var
 	screen_size = get_viewport_rect()
-	half_w = ($Sprite.texture.get_width())
-
+#	half_w = ($Wall/Sprite.texture.get_width())
+	half_w = 32
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Position at the moment
-	position = get_position()
-	
 	# Take Input
 	if Input.is_action_pressed("ui_left"):
-		direction = -1
+		direction = -speed
 	elif Input.is_action_pressed("ui_right"):
-		direction = 1
+		direction = speed
 	else:
 		direction = 0
 	
-	# Calculate movement direction
-	var movement = Vector2(direction * speed * delta, 0)
-	
-	# Move paddle
-	set_position(position + movement)
-	
-	
-	# Clamp to screen
-	if position.x + half_w >= screen_size.size.x:
-		set_position(Vector2(screen_size.size.x - half_w, get_position().y))
-	
-	if position.x - half_w <= 0:
-		set_position(Vector2(half_w, get_position().y))
-	
-	
-	
+func _physics_process(delta):
+	var collision = move_and_collide(Vector2(direction*delta, 0))
+	if collision and "Wall" in collision.collider.name:
+		direction = 0
+		move_and_collide(Vector2.ZERO)
+
+func stopMovement():
+	speed = 0
