@@ -33,20 +33,15 @@ func _process(delta):
 		if position.y == 188 and Input.is_action_just_pressed("ui_down"):
 			position += Vector2(0,100)
 
-
-	if is_on_floor() == true:
-		print("floor")
 	
 	pass
 
 
 func _on_Ladder_body_entered(body):
 	atLadder = true
-	print(atLadder)
 
 
 
 func _on_Ladder_body_exited(body):
 	atLadder = false
-	print(atLadder)
-	pass # Replace with function body.
+
