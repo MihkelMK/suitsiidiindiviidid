@@ -1,16 +1,22 @@
-extends StaticBody2D
+extends KinematicBody2D
 
+var speed = 300
+var direction = Vector2.ZERO
 
-# Declare member variables here. Examples:
-export var ball_speed = 150
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	direction=Vector2(speed, speed)
 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(delta):
+	var collision= move_and_collide(direction*delta)
+	if collision:
+		var reflect = collision.remainder.bounce(collision.normal)
+		direction = direction.bounce(collision.normal)
+		move_and_collide(reflect)
+		
+		if "Floor" in collision.collider.name:
+			get_tree().reload_current_scene()
+		elif "Brick" in collision.collider.name:
+			collision.collider.hit()
+		
+func stopMovement():
+	direction = Vector2.ZERO
