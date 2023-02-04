@@ -9,7 +9,7 @@ var input_enabled = true
 func _process(delta):
 	if input_enabled == true:
 		circlecounter = floor(rotation_degrees / 360)
-		print("hetkel on tehtud " + str(circlecounter) + " ringi.")
+		# print("hetkel on tehtud " + str(circlecounter) + " ringi.")
 		if circlecounter == winnerkriteerium:
 			rotation = 0
 			input_enabled = false
@@ -17,14 +17,14 @@ func _process(delta):
 		if circlecounter >= 0:
 			rotation-=valverotatespeed*delta
 		
-		if Input.is_action_just_pressed("rightarrow"):
+		if Input.is_action_just_pressed("ui_right"):
 			rotation += playerforce
 			#print(rotation_degrees)
-		if Input.is_action_just_pressed("leftarrow"):
+		if Input.is_action_just_pressed("ui_left"):
 			rotation += playerforce
 			#print(rotation_degrees)
 	elif input_enabled == false:
-		print("burger")
+		pass
 
 #func _input(ev):
 #	if ev is InputEventKey and (ev.scancode == KEY_RIGHT or ev.scancode == KEY_LEFT):
