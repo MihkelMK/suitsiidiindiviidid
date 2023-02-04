@@ -21,6 +21,5 @@ func _on_Lift_body_exited(body):
 	$AnimatedSprite.animation = "closing"
 	atLift = false
 
-
 func _on_MoveTimeout_timeout():
 	$"../Player".position.y = goesToNode.get_position().y + 8

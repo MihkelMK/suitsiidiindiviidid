@@ -56,10 +56,3 @@ position = Vector2( 184, 292 )
 [node name="FlipNode2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 624, 292 )
 time = 1.0
-
-[connection signal="body_entered" from="Locker" to="Locker" method="_on_Locker_body_entered"]
-[connection signal="body_exited" from="Locker" to="Locker" method="_on_Locker_body_exited"]
-[connection signal="body_entered" from="LiftBottom" to="LiftBottom" method="_on_Lift_body_entered"]
-[connection signal="body_exited" from="LiftBottom" to="LiftBottom" method="_on_Lift_body_exited"]
-[connection signal="body_entered" from="LiftUpper" to="LiftUpper" method="_on_Lift_body_entered"]
-[connection signal="body_exited" from="LiftUpper" to="LiftUpper" method="_on_Lift_body_exited"]
