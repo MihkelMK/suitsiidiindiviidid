@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/liftavaneb7.png-177beec326d128ecffa4c93dc969ebb7.stex"
+path="res://.import/lockeravanemas3.png-f81f90e3b63f78963931ff2495a2521b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/art/lift/liftavaneb7.png"
-dest_files=[ "res://.import/liftavaneb7.png-177beec326d128ecffa4c93dc969ebb7.stex" ]
+source_file="res://main/art/locker/lockeravanemas3.png"
+dest_files=[ "res://.import/lockeravanemas3.png-f81f90e3b63f78963931ff2495a2521b.stex" ]
 
 [params]
 

@@ -1,0 +1,51 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://main/art/lift/liftkinni.png" type="Texture" id=1]
+[ext_resource path="res://main/art/lift/liftavaneb2.png" type="Texture" id=2]
+[ext_resource path="res://main/art/lift/liftavaneb5.png" type="Texture" id=3]
+[ext_resource path="res://main/art/lift/liftavaneb4.png" type="Texture" id=4]
+[ext_resource path="res://main/art/lift/liftavaneb7.png" type="Texture" id=5]
+[ext_resource path="res://main/art/lift/liftavaneb6.png" type="Texture" id=6]
+[ext_resource path="res://main/art/lift/liftavaneb3.png" type="Texture" id=7]
+[ext_resource path="res://main/art/lift/liftavaneb8.png" type="Texture" id=8]
+[ext_resource path="res://main/art/lift/liftavaneb1.png" type="Texture" id=9]
+[ext_resource path="res://main/Elements/Lift.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "closed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "closing",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "opening",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 40 )
+
+[node name="Lift" type="Area2D"]
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "closed"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="MoveTimeout" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="MoveTimeout" to="." method="_on_MoveTimeout_timeout"]
