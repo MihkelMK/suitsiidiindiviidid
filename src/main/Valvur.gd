@@ -55,7 +55,3 @@ func _on_ViewArea_body_entered(body):
 
 func _on_WaitTime_timeout():
 	wait = false
-
-
-func _on_TimerNode_body_entered(body):
-	wait(5)

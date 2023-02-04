@@ -45,6 +45,7 @@ position = Vector2( 40, 304 )
 
 [node name="TimerNode" parent="." instance=ExtResource( 7 )]
 position = Vector2( 56, 288 )
+time = 2
 
 [connection signal="body_entered" from="Locker" to="Locker" method="_on_Locker_body_entered"]
 [connection signal="body_exited" from="Locker" to="Locker" method="_on_Locker_body_exited"]
@@ -52,4 +53,3 @@ position = Vector2( 56, 288 )
 [connection signal="body_exited" from="LiftBottom" to="LiftBottom" method="_on_Lift_body_exited"]
 [connection signal="body_entered" from="LiftUpper" to="LiftUpper" method="_on_Lift_body_entered"]
 [connection signal="body_exited" from="LiftUpper" to="LiftUpper" method="_on_Lift_body_exited"]
-[connection signal="body_entered" from="TimerNode" to="Valvur" method="_on_TimerNode_body_entered"]
