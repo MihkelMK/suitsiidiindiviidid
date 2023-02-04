@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://main/Elements/Ladder.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://main/Elements/Lift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://main/Valvur.tscn" type="PackedScene" id=6]
 [ext_resource path="res://main/TimerNode.tscn" type="PackedScene" id=7]
+[ext_resource path="res://main/FlipNode.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node"]
 
@@ -38,14 +39,21 @@ position = Vector2( 360, 196 )
 goesToPath = NodePath("../LiftBottom")
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 408, 304 )
+position = Vector2( 288, 200 )
 
 [node name="Valvur" parent="." instance=ExtResource( 6 )]
-position = Vector2( 40, 304 )
+position = Vector2( 56, 304 )
 
 [node name="TimerNode" parent="." instance=ExtResource( 7 )]
-position = Vector2( 56, 288 )
-time = 2
+position = Vector2( 184, 288 )
+time = 0.5
+
+[node name="FlipNode" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 280 )
+
+[node name="FlipNode2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 440, 280 )
+time = 1.0
 
 [connection signal="body_entered" from="Locker" to="Locker" method="_on_Locker_body_entered"]
 [connection signal="body_exited" from="Locker" to="Locker" method="_on_Locker_body_exited"]

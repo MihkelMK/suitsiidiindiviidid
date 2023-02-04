@@ -42,7 +42,6 @@ func _patrol():
 func flip():
 		direction = not direction
 		scale.x *= -1
-		print("Flip!")
 		
 func wait(time):
 	wait = true
