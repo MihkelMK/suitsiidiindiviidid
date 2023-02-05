@@ -5,6 +5,7 @@ var hiding = false
 var inMiniGame = false
 
 onready var breakout = preload("res://breakout/Breakout.tscn")
+onready var popup = preload("res://popup/PopupMayham.tscn")
 
 func _ready():
 	add_to_group("pausedWhenMini")
@@ -59,4 +60,8 @@ func startMini(game):
 			var breakout_instance = breakout.instance()
 			breakout_instance.position=Vector2(-position.x-65,-position.y)
 			add_child(breakout_instance)
+		"popup":
+			var popup_instance = popup.instance()
+			popup_instance.position=Vector2(-position.x-80,-position.y)
+			add_child(popup_instance)
 		

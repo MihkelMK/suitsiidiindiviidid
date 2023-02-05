@@ -29,6 +29,8 @@ __meta__ = {
 }
 
 [node name="Panel" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
 
 [node name="Sprite" type="Sprite" parent="Panel"]
 position = Vector2( -0.661759, -5.66244e-06 )
@@ -39,6 +41,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="CloseButton" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
 
 [node name="Sprite" type="Sprite" parent="CloseButton"]
 position = Vector2( 185.829, -71.969 )
@@ -67,3 +71,5 @@ custom_fonts/font = SubResource( 4 )
 text = "Oh no there is problem!
 Please contact administrator!!!"
 valign = 2
+
+[connection signal="input_event" from="CloseButton" to="." method="_on_CloseButton_input_event"]
