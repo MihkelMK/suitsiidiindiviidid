@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://minigame6/proovikaust/Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://minigame6/art/submarine.png" type="Texture" id=2]
 [ext_resource path="res://minigame6/proovikaust/shooters.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,7 +16,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="KinematicBody2D"]
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D" parent="KinematicBody2D"]

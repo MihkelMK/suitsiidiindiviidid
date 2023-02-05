@@ -10,7 +10,10 @@ var importantBrickX: int = 0
 
 onready var brick = preload("res://minigame6/proovikaust/LendavElement.tscn")
 
-
+func _input(event):
+   # Mouse in viewport coordinates.
+   if event is InputEventMouseButton:
+	   print("Mouse Click/Unclick at: ", event.position)
 
 func set_bricks():
 	for y in range(brickCountY):

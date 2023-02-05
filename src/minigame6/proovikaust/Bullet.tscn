@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://minigame6/art/torpedo.png" type="Texture" id=1]
 [ext_resource path="res://minigame6/proovikaust/Bullet.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -13,5 +13,4 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )

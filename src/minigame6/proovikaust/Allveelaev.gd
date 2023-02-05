@@ -30,9 +30,11 @@ var i = 0
 func _process(delta):
 	if global_position.x <= 100:
 		moveRight = true
+		$Allveelaev.flip_h = true
 	elif global_position.x >=900:
 		moveRight = false
-	
+		$Allveelaev.flip_h = false
+		
 	if moveRight:
 		global_position.x += speed
 	else:
