@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://popup/PopupMayham.gd" type="Script" id=1]
 [ext_resource path="res://popup/popup_hack.tscn" type="PackedScene" id=2]
 [ext_resource path="res://popup/popup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://popup/art/popupbackground.png" type="Texture" id=4]
+[ext_resource path="res://popup/art/backgroundframepopup.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 400.5, 226.5 )
@@ -27,5 +28,10 @@ position = Vector2( 511.5, 298.5 )
 shape = SubResource( 4 )
 
 [node name="PopupTimer" type="Timer" parent="."]
+
+[node name="Frame" type="Sprite" parent="."]
+position = Vector2( 512, 296 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
 
 [connection signal="timeout" from="PopupTimer" to="." method="_on_PopupTimer_timeout"]
