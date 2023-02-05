@@ -19,6 +19,11 @@ height = 17.0
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "stand",

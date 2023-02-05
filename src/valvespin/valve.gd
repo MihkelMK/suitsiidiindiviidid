@@ -13,7 +13,7 @@ func _process(delta):
 		if circlecounter == winnerkriteerium:
 			rotation = 0
 			input_enabled = false
-			get_parent().stopGame()
+			get_parent().stopGame(true)
 		if circlecounter >= 0:
 			rotation-=valverotatespeed*delta
 		

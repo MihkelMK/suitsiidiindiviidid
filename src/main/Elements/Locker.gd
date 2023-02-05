@@ -5,7 +5,7 @@ var soundPlayed = false
 
 func _process(delta):
 	if atLocker and Input.is_key_pressed(KEY_E):
-		$"../Player".hide()
+		$"../Player".goHide(true)
 
 func _on_Locker_body_entered(body):
 	$Sprite.animation = "opening"

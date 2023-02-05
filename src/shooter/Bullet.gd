@@ -6,11 +6,11 @@ var speed = 300
 func _ready():
 	if get_viewport().get_mouse_position().x < 500:
 		$Icon.flip_h = true
-	pass
 
 func _physics_process(delta):
-	
-	var collosion_info = move_and_collide(velocity.normalized() * delta * speed)
+	var collision = move_and_collide(velocity.normalized() * delta * speed)
+	if collision and ("Wall" in collision.collider.name or "Ceiling" in collision.collider.name or "Floor" in collision.collider.name):
+		queue_free()
 
 func shot() -> void:
 	queue_free()

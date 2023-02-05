@@ -26,12 +26,13 @@ func set_bricks():
 			add_child(brick_instance)
 
 func _ready():
+	add_to_group("minigame")
 	randomize()
 	importantBrickY = rand_range(0,brickCountY-1)
 	importantBrickX = rand_range(1,brickCountX-1)
 	set_bricks()
 
-func stopGame():
-	$"../../Level".exitMini()
+func stopGame(win):
+	$"../../Level".exitMini(win)
 	queue_free()
 	

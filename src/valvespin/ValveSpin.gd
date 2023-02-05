@@ -1,6 +1,6 @@
 extends Node2D
 
 
-func stopGame():
-	$"../../Level".exitMini()
+func stopGame(win):
+	$"../../Level".exitMini(win)
 	queue_free()

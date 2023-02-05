@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://shooter/Wall.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 436 )
+
+[node name="WallL" type="StaticBody2D"]
+collision_layer = 2048
+collision_mask = 2048
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 104, 292 )
+shape = SubResource( 1 )

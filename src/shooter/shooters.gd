@@ -10,12 +10,6 @@ var importantBrickY: int = 0
 var importantBrickX: int = 0
 onready var brick = preload("res://shooter/LendavElement.tscn")
 
-func _input(event):
-
-   # Mouse in viewport coordinates.
-   if event is InputEventMouseButton:
-	   print("Mouse Click/Unclick at: ", event.position)
-
 func set_bricks():
 	for y in range(brickCountY):
 		for x in range(brickCountX):
@@ -37,6 +31,7 @@ func set_bricks():
 			add_child(brick_instance)
 
 func _ready():
+	add_to_group("minigame")
 	randomize()
 	importantBrickY = rand_range(0,brickCountY-1)
 	importantBrickX = rand_range(1,brickCountX-1)
@@ -52,5 +47,5 @@ func _physics_process(delta):
 	boatCount = get_tree().get_nodes_in_group("boats").size()
 	
 	if boatCount == 0:
-		$"../../Level".exitMini()
+		$"../../Level".exitMini(true)
 		queue_free()

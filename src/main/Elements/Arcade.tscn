@@ -1,50 +1,30 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://main/art/locker/lockeravanemas1.png" type="Texture" id=1]
-[ext_resource path="res://main/art/locker/lockeravanemas3.png" type="Texture" id=2]
-[ext_resource path="res://main/art/locker/lockeravanemas2.png" type="Texture" id=3]
-[ext_resource path="res://main/art/locker/lockerkinni.png" type="Texture" id=4]
+[ext_resource path="res://main/art/terminalrow.png" type="Texture" id=1]
 [ext_resource path="res://main/Elements/Arcade.gd" type="Script" id=5]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": false,
-"name": "closed",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "closing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "opening",
-"speed": 5.0
-} ]
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 3
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 40 )
+extents = Vector2( 24, 26 )
 
 [node name="Arcade" type="Area2D"]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource( 5 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.999999, 0 )
-scale = Vector2( 2.583, 2.5 )
-frames = SubResource( 2 )
-animation = "closed"
-playing = true
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -3 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 48, 0, 12, 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 material = SubResource( 3 )
-position = Vector2( 24, 0 )
+position = Vector2( 0, -6 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Locker_body_entered"]

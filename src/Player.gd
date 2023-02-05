@@ -3,6 +3,8 @@ extends KinematicBody2D
 export var speed = 4
 var hiding = false
 var inMiniGame = false
+var time = 0
+var points = 0
 
 onready var breakout = preload("res://breakout/Breakout.tscn")
 onready var popup = preload("res://popup/PopupMayham.tscn")
@@ -11,10 +13,25 @@ onready var shooter = preload("res://shooter/Shooter.tscn")
 
 func _ready():
 	add_to_group("pausedWhenMini")
+	time = 0
+	points = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if inMiniGame: return
+	if inMiniGame:
+		if Input.is_key_pressed(KEY_ESCAPE):
+			$"../../Level".exitMini(false)
+		else:
+			return
+	time += delta
+	var seconds = fmod(time,60)
+	var minutes = fmod(time, 3600) / 60
+	var str_elapsed = "%02d : %02d" % [minutes, seconds]
+	$"../Player/Time".text = str_elapsed
+	$"../Player/Points".text = "%02d points" % [points]
+	$"../Player/Sprite/Time".text = str_elapsed
+	$"../Player/Sprite/Points".text = "%02d points" % [points]
+	
 	if !$HideTimeout.is_stopped(): return
 		
 	if Input.is_action_pressed("ui_right"):
@@ -38,10 +55,11 @@ func _process(delta):
 func unhide():
 	if hiding:
 		$CollisionShape2D.disabled = false
+		$AnimatedSprite.scale = Vector2(2,2)
 		modulate = Color(1,1,1,1)
 		hiding = false
 
-func hide():
+func goHide(scale):
 	if !hiding:
 		$AnimatedSprite.animation = "stand"
 		$AudioStreamPlayer2D.volume_db = -90
@@ -50,6 +68,7 @@ func hide():
 		modulate = Color(0.5,0.5,0.5,1)
 		$CollisionShape2D.disabled = true
 		hiding = true
+		if scale: $AnimatedSprite.scale = Vector2(0,0)
 
 func pause():
 	$AnimatedSprite.animation = "stand"
@@ -58,6 +77,10 @@ func pause():
 	
 func unpause():
 	inMiniGame = false
+	
+func addPoints(p):
+	if inMiniGame:
+		points += p
 
 func startMini(game):
 	if inMiniGame: return

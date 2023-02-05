@@ -2,7 +2,13 @@ extends Node
 
 var inMiniGame = false
 	
-func exitMini():
+func exitMini(win):
+	if win: 
+		$Player.addPoints(100)
+	else: $Player.addPoints(-20)
+	
+	for member in get_tree().get_nodes_in_group("minigame"):
+		member.queue_free()
 	for member in get_tree().get_nodes_in_group("pausedWhenMini"):
 		member.unpause()
 

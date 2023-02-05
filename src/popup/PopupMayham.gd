@@ -13,6 +13,7 @@ onready var playerPos =  $"../Player/Camera2D".get_camera_position()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("minigame")
 	randomize()
 	new_game()
 
@@ -56,8 +57,8 @@ func createHackPopup():
 	add_child(popup)
 #
 
-func stopGame():
-	$"../../Level".exitMini()
+func stopGame(win):
+	$"../../Level".exitMini(win)
 	queue_free()
 
 #func _input(event):

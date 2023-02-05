@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://shooter/Player.gd" type="Script" id=1]
 [ext_resource path="res://shooter/art/submarine.png" type="Texture" id=2]
 [ext_resource path="res://shooter/shooters.gd" type="Script" id=3]
 [ext_resource path="res://shooter/art/backgroud.png" type="Texture" id=4]
 [ext_resource path="res://popup/art/backgroundframepopup.png" type="Texture" id=5]
+[ext_resource path="res://shooter/Wall.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,8 +13,8 @@
 script = ExtResource( 3 )
 
 [node name="Backgroud" type="Sprite" parent="."]
-position = Vector2( 517, 300 )
-scale = Vector2( 16.3529, 16.6667 )
+position = Vector2( 512, 296 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
@@ -37,3 +38,16 @@ position = Vector2( 26, 0 )
 position = Vector2( 512, 296 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
+
+[node name="WallL" parent="." instance=ExtResource( 6 )]
+position = Vector2( 816, 0 )
+
+[node name="Ceiling" parent="." instance=ExtResource( 6 )]
+position = Vector2( 792, -40 )
+rotation = 1.5708
+
+[node name="Floor" parent="." instance=ExtResource( 6 )]
+position = Vector2( 792, 428 )
+rotation = 1.5708
+
+[node name="WallR" parent="." instance=ExtResource( 6 )]

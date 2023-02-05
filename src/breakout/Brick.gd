@@ -8,9 +8,8 @@ func hit():
 	if !important: queue_free()
 	
 	elif importantFirstHit:
-		get_parent().stopGame()
+		get_parent().stopGame(true)
 		queue_free()
-		print(get_parent())
 	
 	else:
 		get_child(0).region_rect.position.x += 56

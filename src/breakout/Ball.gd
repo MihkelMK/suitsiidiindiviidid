@@ -14,7 +14,7 @@ func _physics_process(delta):
 		move_and_collide(reflect)
 		
 		if "Floor" in collision.collider.name:
-			$"../../Breakout".stopGame()
+			$"../../Breakout".stopGame(false)
 		elif "Brick" in collision.collider.name:
 			$AudioStreamPlayer2D2.play()
 			collision.collider.hit()

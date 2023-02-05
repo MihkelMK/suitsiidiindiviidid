@@ -4,7 +4,7 @@
 [ext_resource path="res://shooter/Bullet.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3, 3 )
+extents = Vector2( 2, 2 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 collision_layer = 2048
@@ -15,4 +15,5 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
