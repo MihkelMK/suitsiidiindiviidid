@@ -11,6 +11,7 @@ func _input(event):
 
 func _process(delta):
 	look_at(get_global_mouse_position())
+	
 
 func _on_Player_shoot(Bullet, direction, location):
 	var spawned_bullet = Bullet.instantiate()

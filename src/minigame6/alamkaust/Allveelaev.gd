@@ -19,6 +19,4 @@ func hit():
 func makeImportant():
 	important = true
 
-func _process(delta):
-	rotation_degrees += 1.5
-	print(delta.get_pos())
+
