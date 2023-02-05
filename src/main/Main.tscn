@@ -55,12 +55,17 @@ force = true
 [node name="FlipNode3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 384, 296 )
 
+[node name="Arcade" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1019, 208 )
+game = "popup"
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 472, 212 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 40, 89 )
 current = true
+zoom = Vector2( 4, 4 )
 smoothing_enabled = true
 smoothing_speed = 4.0
 

@@ -71,7 +71,7 @@ func startMini(game):
 			get_parent().add_child(breakout_instance)
 		"popup":
 			var popup_instance = popup.instance()
-			popup_instance.position=Vector2(cameraPosition.x-400, cameraPosition.y-400)
+			popup_instance.position=Vector2(cameraPosition.x-450, cameraPosition.y-400)
 			get_parent().add_child(popup_instance)
 		"valvespin":
 			var valvespin_instance = valvespin.instance()
