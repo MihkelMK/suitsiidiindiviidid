@@ -15,8 +15,8 @@ script = ExtResource( 3 )
 
 [node name="Backgroud" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 1.90735e-06, -1.42109e-14 )
-scale = Vector2( 20.5, 20.5 )
+position = Vector2( -6.61655, -4.00001 )
+scale = Vector2( 4.03007, 4.03008 )
 texture = ExtResource( 4 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
