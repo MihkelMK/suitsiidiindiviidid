@@ -1,13 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://minigame6/bullet.gd" type="Script" id=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Area2D
+
+var velocity = Vector2.ZERO
+
+func _physics_process(delta):
+	position += velocity * delta
+"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.5, 13 )
 
 [node name="Bullet" type="Node2D"]
-script = ExtResource( 2 )
+script = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 

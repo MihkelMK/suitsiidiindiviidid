@@ -4,6 +4,10 @@ var important = false
 var importantFirstHit = false
 var positions = [Vector2(24, 120), Vector2(104, 120), Vector2(24, 360), Vector2(104, 360)]
 
+export (int) var speed = 150
+
+var hp = 1
+
 func hit():
 	if !important: queue_free()
 	
@@ -18,5 +22,9 @@ func hit():
 
 func makeImportant():
 	important = true
+
+
+#func _physics_process(delta):
+#	global_position.y += speed * delta
 
 

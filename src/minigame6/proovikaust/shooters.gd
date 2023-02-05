@@ -8,7 +8,7 @@ var brickCountX: int = 5
 var importantBrickY: int = 0
 var importantBrickX: int = 0
 
-onready var brick = preload("res://minigame6/alamkaust/LendavElement.tscn")
+onready var brick = preload("res://minigame6/proovikaust/LendavElement.tscn")
 
 
 
@@ -18,11 +18,11 @@ func set_bricks():
 			var brick_instance = brick.instance()
 			var rng = RandomNumberGenerator.new()
 			rng.randomize()
-			var numx = rng.randi_range(50, 800)
-			var numy = rng.randi_range(70, 450)
-			print(numx, numy)
-			#brick_instance.position=Vector2(135+100*x,70+160*y)
-			brick_instance.position=Vector2(numx, numy)
+			#var numx = rng.randi_range(0, 800)
+			#var numy = rng.randi_range(0, 300)
+			#print(numx, numy)
+			brick_instance.position=Vector2(-200 + 100*x,-100 + 160*y)
+			#brick_instance.position=Vector2(numx, numy)
 			if y==importantBrickY && x==importantBrickX:
 				brick_instance.get_child(0).region_rect.position.x = TEXTURE_VARIATIONS_AMOUNT * TEXTURE_WIDTH
 				brick_instance.makeImportant()
