@@ -57,7 +57,7 @@ position = Vector2( 384, 296 )
 
 [node name="Arcade" parent="." instance=ExtResource( 2 )]
 position = Vector2( 363, 210 )
-game = "valvespin"
+game = "popup"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 472, 212 )
