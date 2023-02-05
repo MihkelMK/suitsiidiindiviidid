@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hitbrick.mp3-b2c5ca8d669be4191fe4cb0371ad96fb.mp3str"
+
+[deps]
+
+source_file="res://sounds/hitbrick.mp3"
+dest_files=[ "res://.import/hitbrick.mp3-b2c5ca8d669be4191fe4cb0371ad96fb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/metal-footsteps-14727.mp3-b8a55d87ece749e2c3bbd52b75b163fd.mp3str"
+
+[deps]
+
+source_file="res://sounds/metal-footsteps-14727.mp3"
+dest_files=[ "res://.import/metal-footsteps-14727.mp3-b8a55d87ece749e2c3bbd52b75b163fd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
