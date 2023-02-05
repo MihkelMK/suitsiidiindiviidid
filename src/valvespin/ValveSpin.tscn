@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://valvespin/valve.gd" type="Script" id=2]
+[ext_resource path="res://valvespin/art/valvebackground.png" type="Texture" id=3]
+[ext_resource path="res://valvespin/art/valve1.png" type="Texture" id=4]
+[ext_resource path="res://valvespin/ValveSpin.gd" type="Script" id=5]
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.410156, 0.410156, 0.410156, 1, 0.242188, 0.242188, 0.242188, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0625
+
+[node name="ValveSpin" type="Node2D"]
+position = Vector2( 74, 32 )
+scale = Vector2( 0.866592, 0.866592 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512, 298.5 )
+scale = Vector2( 0.5, 709 )
+texture = SubResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+
+[node name="Valve" type="Sprite" parent="."]
+position = Vector2( 363, 336 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Valve"]
+margin_left = -72.5713
+margin_top = -43.3261
+margin_right = 73.4287
+margin_bottom = 40.6739
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+
+[node name="Area2D" type="Area2D" parent="Valve"]
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Valve/Area2D"]
+shape = SubResource( 1 )

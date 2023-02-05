@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://breakout/Paddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://breakout/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://breakout/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://breakout/Breakout.gd" type="Script" id=5]
+[ext_resource path="res://breakout/art/background.png" type="Texture" id=6]
+[ext_resource path="res://breakout/art/backgroundframe.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 356, 4 )
+
+[node name="Breakout" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Wall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 152, 8 )
+collision_layer = 128
+collision_mask = 128
+
+[node name="Wall2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 856, 0 )
+collision_layer = 128
+collision_mask = 128
+
+[node name="Roof" type="StaticBody2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
+position = Vector2( 508, 128 )
+shape = SubResource( 1 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 508, 568 )
+shape = SubResource( 1 )
+
+[node name="Screen" type="Sprite" parent="."]
+position = Vector2( -128, 368 )
+scale = Vector2( 5.95918, 5.95918 )
+texture = ExtResource( 6 )
+offset = Vector2( 96.7877, -12.7534 )
+
+[node name="Paddle" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 549 )
+collision_layer = 128
+collision_mask = 128
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 328, 384 )
+collision_layer = 128
+collision_mask = 128
+
+[node name="ScreenBezzel" type="Sprite" parent="."]
+position = Vector2( -128, 368 )
+scale = Vector2( 5.95918, 5.95918 )
+texture = ExtResource( 7 )
+offset = Vector2( 96.7877, -12.7534 )
