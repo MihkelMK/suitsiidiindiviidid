@@ -15,6 +15,7 @@ func _process(delta):
 		
 func _on_Lift_body_entered(body):
 	$AnimatedSprite.animation = "opening"
+	$AudioStreamPlayer.play()
 	atLift = true
 
 func _on_Lift_body_exited(body):

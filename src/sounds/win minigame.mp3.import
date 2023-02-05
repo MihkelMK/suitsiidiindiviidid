@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/win minigame.mp3-69c6429387a213f8965c95d59537bcf6.mp3str"
+
+[deps]
+
+source_file="res://sounds/win minigame.mp3"
+dest_files=[ "res://.import/win minigame.mp3-69c6429387a213f8965c95d59537bcf6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

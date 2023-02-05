@@ -11,5 +11,5 @@ dest_files=[ "res://.import/low-hum-14645.mp3-ad4947ddf73ed8896a08f9b6036e3207.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
