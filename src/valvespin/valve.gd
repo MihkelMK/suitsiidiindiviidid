@@ -1,6 +1,6 @@
 extends Sprite
 
-var playerforce = 0.2
+var playerforce = 0.5
 var winnerkriteerium = 3
 var valverotatespeed = 1
 var circlecounter = 1337
@@ -13,7 +13,7 @@ func _process(delta):
 		if circlecounter == winnerkriteerium:
 			rotation = 0
 			input_enabled = false
-			$Label.text = "Task completed!"
+			get_parent().stopGame()
 		if circlecounter >= 0:
 			rotation-=valverotatespeed*delta
 		

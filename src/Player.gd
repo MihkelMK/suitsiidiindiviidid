@@ -6,6 +6,7 @@ var inMiniGame = false
 
 onready var breakout = preload("res://breakout/Breakout.tscn")
 onready var popup = preload("res://popup/PopupMayham.tscn")
+onready var valvespin = preload("res://valvespin/ValveSpin.tscn")
 
 func _ready():
 	add_to_group("pausedWhenMini")
@@ -64,4 +65,7 @@ func startMini(game):
 			var popup_instance = popup.instance()
 			popup_instance.position=Vector2(-position.x-80,-position.y)
 			add_child(popup_instance)
-		
+		"valvespin":
+			var valvespin_instance = valvespin.instance()
+			valvespin_instance.position=Vector2(-position.x-80,-position.y)
+			add_child(valvespin_instance)

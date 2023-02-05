@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/valve1.png-08bb6ff2e5effa9bb0353221e17b28c1.stex"
+path="res://.import/valve1.png-b5da9fc942bffd126dfb217101b2d583.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame4/art/valve1.png"
-dest_files=[ "res://.import/valve1.png-08bb6ff2e5effa9bb0353221e17b28c1.stex" ]
+source_file="res://valvespin/art/valve1.png"
+dest_files=[ "res://.import/valve1.png-b5da9fc942bffd126dfb217101b2d583.stex" ]
 
 [params]
 
