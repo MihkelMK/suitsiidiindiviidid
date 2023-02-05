@@ -16,7 +16,10 @@ func _physics_process(delta):
 		if "Floor" in collision.collider.name:
 			$"../../Breakout".stopGame()
 		elif "Brick" in collision.collider.name:
+			$AudioStreamPlayer2D2.play()
 			collision.collider.hit()
+		else:
+			$AudioStreamPlayer2D.play()
 		
 func stopMovement():
 	direction = Vector2.ZERO

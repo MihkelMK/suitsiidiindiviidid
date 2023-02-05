@@ -11,5 +11,5 @@ dest_files=[ "res://.import/hitbrick.mp3-ab66715a9aae12afd74462df9c0365cc.mp3str
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
