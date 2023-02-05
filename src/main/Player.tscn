@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://main/art/player/walk6.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://main/art/player/walk2.png" type="Texture" id=8]
 [ext_resource path="res://main/art/player/walk1.png" type="Texture" id=9]
 [ext_resource path="res://main/art/player/stand.png" type="Texture" id=10]
+[ext_resource path="res://sounds/footsteps edited.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -48,3 +49,7 @@ shape = SubResource( 3 )
 [node name="HideTimeout" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true

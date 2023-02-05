@@ -22,15 +22,18 @@ func _process(delta):
 		move_and_collide(Vector2(speed,0))
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.animation = "walk"
+		$AudioStreamPlayer2D.volume_db = -6
 	
 	elif Input.is_action_pressed("ui_left"):
 		unhide()
 		move_and_collide(Vector2(-speed,0))
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.animation = "walk"
+		$AudioStreamPlayer2D.volume_db = -6
 		
 	else:
 		$AnimatedSprite.animation = "stand"
+		$AudioStreamPlayer2D.volume_db = -90
 		
 func unhide():
 	if hiding:
@@ -41,6 +44,7 @@ func unhide():
 func hide():
 	if !hiding:
 		$AnimatedSprite.animation = "stand"
+		$AudioStreamPlayer2D.volume_db = -90
 		$HideTimeout.start()
 		move_and_collide(Vector2(0,0))
 		modulate = Color(0.5,0.5,0.5,1)
@@ -48,6 +52,8 @@ func hide():
 		hiding = true
 
 func pause():
+	$AnimatedSprite.animation = "stand"
+	$AudioStreamPlayer2D.volume_db = -90
 	inMiniGame = true
 	
 func unpause():
