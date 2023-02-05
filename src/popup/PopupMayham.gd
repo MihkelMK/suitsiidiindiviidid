@@ -8,7 +8,7 @@ var winstate = 0
 var pregeneratedPopups = 6
 
 onready var screenSize = $Screen/Sprite.get_rect().size
-onready var viewSize = get_viewport_rect().size
+onready var viewSize =  $"../../Player".get_position()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,7 +39,7 @@ func createPopup():
 	var popup = popup_scene.instance()
 
 	# Set the popup's position to a random location.
-	popup.position = Vector2(500+screenSize.x*rand_range(-0.9,0.9), 320+screenSize.y*rand_range(-1.4,1))
+	popup.position = Vector2(viewSize.x + screenSize.x*rand_range(-0.8,0.8)+150, viewSize.y + screenSize.y*rand_range(-1.4,1)+100)
 
 	# Spawn the popup by adding it to the Main scene.
 	add_child(popup)
