@@ -8,7 +8,7 @@ var winstate = 0
 var pregeneratedPopups = 6
 
 onready var screenSize = $Screen/Sprite.get_rect().size
-onready var viewSize =  $"../../Player".get_position()
+onready var viewSize =  $"../Player".get_position()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -56,7 +56,7 @@ func createHackPopup():
 #
 
 func stopGame():
-	$"../../../Main".exitMini()
+	$"../../../Level".exitMini()
 	queue_free()
 
 #func _input(event):

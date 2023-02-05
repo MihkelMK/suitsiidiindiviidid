@@ -55,10 +55,6 @@ force = true
 [node name="FlipNode3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 384, 296 )
 
-[node name="Arcade" parent="." instance=ExtResource( 2 )]
-position = Vector2( 363, 210 )
-game = "breakout"
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 472, 212 )
 
@@ -67,3 +63,5 @@ position = Vector2( 40, 89 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 4.0
+
+[node name="Arcade2" parent="." instance=ExtResource( 2 )]
