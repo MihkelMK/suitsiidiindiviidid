@@ -6,11 +6,11 @@
 [ext_resource path="res://valvespin/art/valve1.png" type="Texture" id=4]
 [ext_resource path="res://valvespin/ValveSpin.gd" type="Script" id=5]
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=5]
 colors = PoolColorArray( 0.410156, 0.410156, 0.410156, 1, 0.242188, 0.242188, 0.242188, 1 )
 
 [sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+gradient = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -20,6 +20,8 @@ font_data = ExtResource( 1 )
 radius = 32.0625
 
 [node name="ValveSpin" type="Node2D"]
+position = Vector2( 74, 32 )
+scale = Vector2( 0.866592, 0.866592 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -54,6 +56,8 @@ clip_text = true
 uppercase = true
 
 [node name="Area2D" type="Area2D" parent="Valve"]
+collision_layer = 1024
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Valve/Area2D"]
 shape = SubResource( 1 )

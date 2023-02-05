@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgroud.png-407bc20a28af7070563ee257a85cfeac.stex"
+path="res://.import/backgroud.png-80358fa3be309d16b53ad8f2f532818b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame6/art/backgroud.png"
-dest_files=[ "res://.import/backgroud.png-407bc20a28af7070563ee257a85cfeac.stex" ]
+source_file="res://shooter/art/backgroud.png"
+dest_files=[ "res://.import/backgroud.png-80358fa3be309d16b53ad8f2f532818b.stex" ]
 
 [params]
 

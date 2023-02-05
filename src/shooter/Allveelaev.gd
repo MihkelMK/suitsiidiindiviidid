@@ -26,12 +26,14 @@ func makeImportant():
 
 var i = 0
 
+func _ready():
+	add_to_group("boats")
 
 func _process(delta):
-	if global_position.x <= 100:
+	if global_position.x <= 50:
 		moveRight = true
 		$Allveelaev.flip_h = true
-	elif global_position.x >=900:
+	elif global_position.x >=800:
 		moveRight = false
 		$Allveelaev.flip_h = false
 		

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/torpedo.png-f10e2ce89cfcbbcad12acff6741388d4.stex"
+path="res://.import/submarine.png-e1ffe8ed48968012123657c1c4706f4f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame6/art/torpedo.png"
-dest_files=[ "res://.import/torpedo.png-f10e2ce89cfcbbcad12acff6741388d4.stex" ]
+source_file="res://shooter/art/submarine.png"
+dest_files=[ "res://.import/submarine.png-e1ffe8ed48968012123657c1c4706f4f.stex" ]
 
 [params]
 
