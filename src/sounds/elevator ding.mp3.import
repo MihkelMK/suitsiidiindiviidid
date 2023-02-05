@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/elevator ding.mp3-2b3c3cd1924916deed50f17c0efd3638.mp3str"
+
+[deps]
+
+source_file="res://sounds/elevator ding.mp3"
+dest_files=[ "res://.import/elevator ding.mp3-2b3c3cd1924916deed50f17c0efd3638.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/win_explosion.mp3-28eb51202ddd547ebbad86a311c5434d.mp3str"
+
+[deps]
+
+source_file="res://sounds/win_explosion.mp3"
+dest_files=[ "res://.import/win_explosion.mp3-28eb51202ddd547ebbad86a311c5434d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
