@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://main/art/wallsfloors/Basic_Tileset.tscn" type="PackedScene" id=1]
 [ext_resource path="res://main/Elements/Lift.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://main/TimerNode.tscn" type="PackedScene" id=8]
 [ext_resource path="res://main/Elements/Arcade.tscn" type="PackedScene" id=9]
 [ext_resource path="res://main/Main.gd" type="Script" id=10]
+[ext_resource path="res://main/art/explosion.png" type="Texture" id=11]
 
 [node name="Level" type="Node"]
 script = ExtResource( 10 )
@@ -303,6 +304,15 @@ current = true
 zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 smoothing_speed = 4.0
+
+[node name="Sprite" type="CanvasLayer" parent="Player"]
+layer = 20
+visible = false
+
+[node name="Spritesss" type="Sprite" parent="Player/Sprite"]
+position = Vector2( 648, 568 )
+scale = Vector2( 25.6508, 25.6508 )
+texture = ExtResource( 11 )
 
 [node name="TimerNode" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1406, 131 )

@@ -8,6 +8,8 @@ func _process(delta):
 	if !$MoveTimeout.is_stopped(): return
 
 	if atLift and Input.is_key_pressed(KEY_E):
+		if "12" in goesToNode.name: 
+			$"../Player/Sprite".visible = true
 		goesToNode.get_child(0).animation = "opening"
 		$"../Player".position.x = get_position().x
 		$MoveTimeout.start()

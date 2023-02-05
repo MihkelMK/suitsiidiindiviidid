@@ -50,7 +50,7 @@ func createHackPopup():
 	var popup = hack_popup_scene.instance()
 
 	# Set the popup's position to a random location.
-	popup.position = Vector2(playerPos.x/2+20, playerPos.y/2-200)
+	popup.position = Vector2(playerPos.x+300, playerPos.y)
 
 	# Spawn the popup by adding it to the Main scene.
 	add_child(popup)
