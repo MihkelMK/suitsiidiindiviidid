@@ -14,6 +14,6 @@ func shoot():
 	var bullet = bulletPath.instance()
 
 	get_parent().add_child(bullet)
-	bullet.position = Vector2($Node2D/Position2D.global_position.x+50, $Node2D/Position2D.global_position.y+50)
+	bullet.position = Vector2($Node2D/Position2D.global_position.x-250, $Node2D/Position2D.global_position.y+50)
 	bullet.velocity = get_global_mouse_position() - bullet.position
 

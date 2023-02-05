@@ -30,10 +30,10 @@ func _ready():
 	add_to_group("boats")
 
 func _process(delta):
-	if global_position.x <= 50:
+	if global_position.x <= 400:
 		moveRight = true
 		$Allveelaev.flip_h = true
-	elif global_position.x >=800:
+	elif global_position.x >=1000:
 		moveRight = false
 		$Allveelaev.flip_h = false
 		
