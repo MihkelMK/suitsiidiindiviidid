@@ -325,3 +325,10 @@ time = 5.0
 [node name="TimerNode2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2251, 133 )
 time = 2.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 289.0
+margin_right = 302.0
+margin_bottom = 303.0
+text = "arrows to move, e to interract"

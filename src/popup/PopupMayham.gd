@@ -57,7 +57,7 @@ func createHackPopup():
 #
 
 func stopGame():
-	$"../../../Level".exitMini()
+	$"../../Level".exitMini()
 	queue_free()
 
 #func _input(event):
