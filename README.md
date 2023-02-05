@@ -1,5 +1,4 @@
 # Suitsiidi Indiviidid (Suicide Individuals)
-Play the game [suitsiidiindiviidid.ee](https://suitsiidiindiviidid.ee)
 
 ### EST
 Sa oled spioon allveelaeval, mis on teel su riiki ründama. Ainus võimalus oht õigeaegselt kõrvaldada on koos laevaga põhja minna.  
