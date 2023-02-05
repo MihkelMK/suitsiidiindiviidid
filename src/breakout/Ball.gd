@@ -14,7 +14,7 @@ func _physics_process(delta):
 		move_and_collide(reflect)
 		
 		if "Floor" in collision.collider.name:
-			get_tree().reload_current_scene()
+			$"../../Breakout".stopGame()
 		elif "Brick" in collision.collider.name:
 			collision.collider.hit()
 		

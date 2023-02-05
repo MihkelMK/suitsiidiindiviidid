@@ -15,17 +15,25 @@ script = ExtResource( 5 )
 
 [node name="Wall" parent="." instance=ExtResource( 4 )]
 position = Vector2( 152, 8 )
+collision_layer = 128
+collision_mask = 128
 
 [node name="Wall2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 856, 0 )
+collision_layer = 128
+collision_mask = 128
 
 [node name="Roof" type="StaticBody2D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
 position = Vector2( 508, 128 )
 shape = SubResource( 1 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 508, 568 )
@@ -39,9 +47,13 @@ offset = Vector2( 96.7877, -12.7534 )
 
 [node name="Paddle" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 549 )
+collision_layer = 128
+collision_mask = 128
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 328, 384 )
+collision_layer = 128
+collision_mask = 128
 
 [node name="ScreenBezzel" type="Sprite" parent="."]
 position = Vector2( -128, 368 )

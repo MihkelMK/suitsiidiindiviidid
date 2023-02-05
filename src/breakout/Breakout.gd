@@ -32,6 +32,7 @@ func _ready():
 	set_bricks()
 
 func stopGame():
-	$Ball.stopMovement()
-	$Paddle.stopMovement()
+	print("mini")
+	$"../../../Main".exitMini()
+	queue_free()
 	
