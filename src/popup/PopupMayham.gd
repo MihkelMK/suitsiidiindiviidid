@@ -39,7 +39,7 @@ func createPopup():
 	var popup = popup_scene.instance()
 
 	# Set the popup's position to a random location.
-	popup.position = Vector2(viewSize.x/2 + screenSize.x*rand_range(-0.8,0.8), viewSize.y/2 + screenSize.y*rand_range(-1.4,1)-200)
+	popup.position = Vector2(500+screenSize.x*rand_range(-0.9,0.9), 320+screenSize.y*rand_range(-1.4,1))
 
 	# Spawn the popup by adding it to the Main scene.
 	add_child(popup)
