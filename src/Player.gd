@@ -61,22 +61,23 @@ func unpause():
 
 func startMini(game):
 	if inMiniGame: return
-	$"../../Main".enterMini()
+	$"../../Level".enterMini()
+	var cameraPosition = $"../Player/Camera2D".get_camera_position()
 
 	match game:
 		"breakout":	
 			var breakout_instance = breakout.instance()
-			breakout_instance.position=Vector2(-position.x-65,-position.y)
-			add_child(breakout_instance)
+			breakout_instance.position=Vector2(cameraPosition.x-700, cameraPosition.y-300)
+			get_parent().add_child(breakout_instance)
 		"popup":
 			var popup_instance = popup.instance()
-			popup_instance.position=Vector2(-position.x-80,-position.y)
-			add_child(popup_instance)
+			popup_instance.position=Vector2(cameraPosition.x-400, cameraPosition.y-400)
+			get_parent().add_child(popup_instance)
 		"valvespin":
 			var valvespin_instance = valvespin.instance()
-			valvespin_instance.position=Vector2(-position.x,-position.y)
-			add_child(valvespin_instance)
+			valvespin_instance.position=Vector2(cameraPosition.x-400, cameraPosition.y-300)
+			get_parent().add_child(valvespin_instance)
 		"shooter":
 			var shooter_instance = shooter.instance()
-			shooter_instance.position=Vector2(-position.x-100,-position.y-50)
-			add_child(shooter_instance)
+			shooter_instance.position=Vector2(cameraPosition.x-400, cameraPosition.y-400)
+			get_parent().add_child(shooter_instance)

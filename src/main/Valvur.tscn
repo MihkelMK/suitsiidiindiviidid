@@ -19,11 +19,6 @@ height = 17.0
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "stand",
@@ -36,7 +31,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 80, 10 )
+extents = Vector2( 92, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 10 )

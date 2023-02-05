@@ -10,6 +10,7 @@
 extents = Vector2( 400.5, 226.5 )
 
 [node name="PopupMayham" type="Node2D"]
+position = Vector2( -512, -298 )
 script = ExtResource( 1 )
 popup_scene = ExtResource( 3 )
 hack_popup_scene = ExtResource( 2 )
