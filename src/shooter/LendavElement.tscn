@@ -4,7 +4,7 @@
 [ext_resource path="res://shooter/Allveelaev.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+extents = Vector2( 8, 8 )
 
 [node name="LendavElement" type="Area2D"]
 collision_layer = 2048
@@ -13,7 +13,7 @@ script = ExtResource( 2 )
 
 [node name="Allveelaev" type="Sprite" parent="."]
 position = Vector2( -0.500002, 4.76837e-07 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

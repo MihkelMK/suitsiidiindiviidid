@@ -27,6 +27,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D" parent="KinematicBody2D"]

@@ -15,12 +15,8 @@ func set_bricks():
 		for x in range(brickCountX):
 			var brick_instance = brick.instance()
 			var rng = RandomNumberGenerator.new()
-			rng.randomize()
-			#var numx = rng.randi_range(0, 800)
-			#var numy = rng.randi_range(0, 300)
-			#print(numx, numy)
+
 			brick_instance.position=Vector2(400+100*x,220+160*y)
-			#brick_instance.position=Vector2(numx, numy)
 			if y==importantBrickY && x==importantBrickX:
 				brick_instance.get_child(0).region_rect.position.x = TEXTURE_VARIATIONS_AMOUNT * TEXTURE_WIDTH
 				brick_instance.makeImportant()
@@ -43,7 +39,6 @@ func stopGame():
 	
 func _physics_process(delta):
 	position += Vector2.ZERO * delta
-
 	boatCount = get_tree().get_nodes_in_group("boats").size()
 	
 	if boatCount == 0:
