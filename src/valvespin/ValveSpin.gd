@@ -2,5 +2,5 @@ extends Node2D
 
 
 func stopGame():
-	$"../../../Level".exitMini()
+	$"../../Level".exitMini()
 	queue_free()

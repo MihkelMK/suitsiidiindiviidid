@@ -52,5 +52,5 @@ func _physics_process(delta):
 	boatCount = get_tree().get_nodes_in_group("boats").size()
 	
 	if boatCount == 0:
-		$"../../../Level".exitMini()
+		$"../../Level".exitMini()
 		queue_free()

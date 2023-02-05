@@ -32,6 +32,6 @@ func _ready():
 	set_bricks()
 
 func stopGame():
-	$"../../../Level".exitMini()
+	$"../../Level".exitMini()
 	queue_free()
 	

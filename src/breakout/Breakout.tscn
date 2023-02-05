@@ -52,8 +52,6 @@ collision_mask = 128
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 328, 384 )
-collision_layer = 128
-collision_mask = 128
 
 [node name="ScreenBezzel" type="Sprite" parent="."]
 position = Vector2( -128, 368 )
