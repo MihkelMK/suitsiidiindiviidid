@@ -67,5 +67,3 @@ custom_fonts/font = SubResource( 4 )
 text = "Oh no there is problem!
 Please contact administrator!!!"
 valign = 2
-
-[connection signal="input_event" from="CloseButton" to="." method="_on_CloseButton_input_event"]

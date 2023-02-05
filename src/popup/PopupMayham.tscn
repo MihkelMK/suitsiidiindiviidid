@@ -25,6 +25,6 @@ position = Vector2( 511.5, 298.5 )
 shape = SubResource( 4 )
 
 [node name="PopupTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 0.356
 
 [connection signal="timeout" from="PopupTimer" to="." method="_on_PopupTimer_timeout"]
