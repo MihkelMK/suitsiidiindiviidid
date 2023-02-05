@@ -21,11 +21,13 @@ func _physics_process(delta):
 	if wait || paused: return
 	
 	if chasing:
+		$AudioStreamPlayer2D.volume_db = 6
 		currentSpeed = runSpeed
 		$Body.animation = "run"
 
 	else:
 		currentSpeed = normalSpeed
+		$AudioStreamPlayer2D.volume_db = -14
 		$Body.animation = "walk"
 		
 	var collision
@@ -58,10 +60,13 @@ func flip():
 		
 func wait(time):	
 	wait = true
+	$AudioStreamPlayer2D.volume_db = -90
 	$Body.animation = "stand"
 	$WaitTime.start(time)
 	
 func pause():
+	$AudioStreamPlayer2D.volume_db = -90
+	$Body.animation = "stand"
 	paused = true
 
 func unpause():

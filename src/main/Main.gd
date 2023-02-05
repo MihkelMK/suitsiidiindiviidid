@@ -34,4 +34,3 @@ func _on_FlipNode_body_entered(body):
 func _on_TimerNode_body_entered(body):
 	print(body)
 	body.wait(4)
->>>>>>> 0816c253109e0c23eaabfd7bc3ad29b9e1235e83
