@@ -8,7 +8,7 @@ export var walkrange = 200
 var chasing = false
 var wait = false
 var normalSpeed = 1
-var runSpeed = 5
+var runSpeed = 5.5
 var currentSpeed = normalSpeed
 var origin = position.x
 var paused = false
@@ -18,18 +18,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if wait || paused: return
+	if paused: return
 	
 	if chasing:
 		$AudioStreamPlayer2D.volume_db = 6
 		currentSpeed = runSpeed
 		$Body.animation = "run"
 
+	elif wait: return
 	else:
 		currentSpeed = normalSpeed
 		$AudioStreamPlayer2D.volume_db = -14
 		$Body.animation = "walk"
 		
+	
 	var collision
 	if moveRight:
 		collision = move_and_collide(Vector2(currentSpeed,0))
@@ -38,21 +40,6 @@ func _physics_process(delta):
 	
 	if collision and "Player" in collision.collider.name:
 		get_tree().reload_current_scene()
-
-# Deprecated
-func _patrol():
-	print(origin)
-	print(position.x)
-	if (origin >= position.x or position.x >= origin+walkrange):
-		flip()
-		
-	if moveRight:
-		move_and_collide(Vector2(currentSpeed,0))
-		#print("parem")
-		
-	if not moveRight:
-		move_and_collide(Vector2(-currentSpeed,0))
-		#print("vasak")
 		
 func flip():
 		moveRight = not moveRight
@@ -78,12 +65,16 @@ func _on_WaitTime_timeout():
 func _on_BackViewArea_body_entered(body):
 	if paused: return
 	if "Player" in body.name:
+		$WaitTime.stop()
+		wait = false
 		chasing = true
 		flip()
 
 func _on_FrontViewArea_body_entered(body):
 	if paused: return
 	if "Player" in body.name:
+		$WaitTime.stop()
+		wait = false
 		chasing = true
 
 func _on_FrontViewArea_body_exited(body):

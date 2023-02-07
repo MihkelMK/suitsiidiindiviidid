@@ -5,7 +5,7 @@ var importantFirstHit = false
 var moveRight = true
 var positions = [Vector2(24, 120), Vector2(104, 120), Vector2(24, 360), Vector2(104, 360)]
 
-export (int) var speed = 2
+export (int) var speed = 200
 
 var hp = 1
 
@@ -37,9 +37,9 @@ func _process(delta):
 		$Allveelaev.flip_h = false
 		
 	if moveRight:
-		global_position.x += speed
+		global_position.x += speed*delta
 	else:
-		global_position.x -= speed
+		global_position.x -= speed*delta
 
 
 func _on_LendavElement_body_entered(body):

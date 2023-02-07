@@ -246,10 +246,10 @@ position = Vector2( 1802, 240 )
 position = Vector2( 500, 232 )
 
 [node name="Locker2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1483, 120 )
+position = Vector2( 1501, 120 )
 
 [node name="Locker4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1279, 232 )
+position = Vector2( 1290, 232 )
 
 [node name="Locker5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1502, 232 )
@@ -382,6 +382,6 @@ follow_viewport_enable = true
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
 material = SubResource( 2 )
-position = Vector2( 2262.86, 1040 )
+position = Vector2( 2514.29, 1028.57 )
 scale = Vector2( 100, 60 )
 texture = ExtResource( 13 )

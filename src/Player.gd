@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 4
+export var speed = 240
 var hiding = false
 var inMiniGame = false
 var time = 0
@@ -18,12 +18,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time += delta
 	if inMiniGame:
 		if Input.is_key_pressed(KEY_ESCAPE):
 			$"../../Level".exitMini(false)
 		else:
 			return
-	time += delta
 	var seconds = fmod(time,60)
 	var minutes = fmod(time, 3600) / 60
 	var str_elapsed = "%02d : %02d" % [minutes, seconds]
@@ -36,14 +36,14 @@ func _process(delta):
 		
 	if Input.is_action_pressed("ui_right"):
 		unhide()
-		move_and_collide(Vector2(speed,0))
+		move_and_collide(Vector2(speed*delta,0))
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.animation = "walk"
 		$AudioStreamPlayer2D.volume_db = -6
 	
 	elif Input.is_action_pressed("ui_left"):
 		unhide()
-		move_and_collide(Vector2(-speed,0))
+		move_and_collide(Vector2(-speed*delta,0))
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.animation = "walk"
 		$AudioStreamPlayer2D.volume_db = -6
